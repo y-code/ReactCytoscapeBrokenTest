@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { CustomCytoscape } from "./CustomCytoscape";
+import { CustomCytoscapeBroken } from "./CustomCytoscapeBroken";
+
+const elements = [
+  { data: { id: "1" }, position: { x: 0, y: 0 } },
+  { data: { id: "2" }, position: { x: 100, y: 0 } },
+  { data: { source: "1", target: "2" } }
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <CustomCytoscape elements={elements} />
+      <CustomCytoscapeBroken elements={elements} />;
+    </React.Fragment>
   );
 }
 
